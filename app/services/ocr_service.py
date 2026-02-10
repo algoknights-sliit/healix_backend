@@ -1,9 +1,11 @@
 from google.cloud import documentai
-from app.core.cloud import docai_client
+from app.core.cloud import get_docai_client
 from app.core.config import PROJECT_ID, DOC_AI_LOCATION, DOC_AI_PROCESSOR_ID
 
 def process_with_document_ai(gcs_uri: str):
-    name = docai_client.processor_path(
+    client = get_docai_client()
+
+    name = client.processor_path(
         PROJECT_ID, DOC_AI_LOCATION, DOC_AI_PROCESSOR_ID
     )
 
@@ -15,5 +17,5 @@ def process_with_document_ai(gcs_uri: str):
         )
     )
 
-    result = docai_client.process_document(request=request)
+    result = client.process_document(request=request)
     return result.document
