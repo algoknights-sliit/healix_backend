@@ -1,0 +1,131 @@
+{
+  "patient": {
+    "name": "MR S KUMAR",
+    "age_years": 62,
+    "gender": "Male",
+    "ref_doctor": "OPD",
+    "service_ref_no": "CHL000735039"
+  },
+  "report": {
+    "type": "Full Blood Count",
+    "sample_collected_at": "2025-06-03T09:10:00",
+    "printed_at": "2025-06-03T18:43:00"
+  },
+  "biomarkers": [
+    {
+      "name": "WBC",
+      "value": 7970.0,
+      "unit": "per cu mm",
+      "absolute": null,
+      "ref_range": [
+        4000.0,
+        11000.0
+      ]
+    },
+    {
+      "name": "Neutrophils",
+      "value": 79.0,
+      "unit": "%",
+      "absolute": 6296.3,
+      "ref_range": null
+    },
+    {
+      "name": "Lymphocytes",
+      "value": 11.0,
+      "unit": "%",
+      "absolute": 876.7,
+      "ref_range": null
+    },
+    {
+      "name": "Eosinophils",
+      "value": 2.0,
+      "unit": "%",
+      "absolute": 159.4,
+      "ref_range": null
+    },
+    {
+      "name": "Monocytes",
+      "value": 8.0,
+      "unit": "%",
+      "absolute": 637.6,
+      "ref_range": null
+    },
+    {
+      "name": "Basophils",
+      "value": 0.0,
+      "unit": "%",
+      "absolute": 0.0,
+      "ref_range": null
+    },
+    {
+      "name": "Hemoglobin",
+      "value": 13.6,
+      "unit": "g/dL",
+      "absolute": null,
+      "ref_range": [
+        11.0,
+        16.5
+      ]
+    },
+    {
+      "name": "PCV",
+      "value": 39.2,
+      "unit": "%",
+      "absolute": null,
+      "ref_range": [
+        36.0,
+        48.0
+      ]
+    },
+    {
+      "name": "MCHC",
+      "value": 34.6,
+      "unit": "g/dL",
+      "absolute": null,
+      "ref_range": [
+        33.0,
+        37.0
+      ]
+    },
+    {
+      "name": "RBC",
+      "value": 4.29,
+      "unit": "10^6/uL",
+      "absolute": null,
+      "ref_range": [
+        4.0,
+        6.2
+      ]
+    },
+    {
+      "name": "MCH",
+      "value": 31.7,
+      "unit": "pg",
+      "absolute": null,
+      "ref_range": [
+        27.0,
+        31.0
+      ]
+    },
+    {
+      "name": "MCV",
+      "value": 91.5,
+      "unit": "fL",
+      "absolute": null,
+      "ref_range": [
+        78.0,
+        100.0
+      ]
+    },
+    {
+      "name": "Platelets",
+      "value": 224000.0,
+      "unit": "per cu mm",
+      "absolute": null,
+      "ref_range": [
+        150000.0,
+        400000.0
+      ]
+    }
+  ]
+}

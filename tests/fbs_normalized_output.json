@@ -1,0 +1,27 @@
+{
+  "patient": {
+    "name": "MRS. S N MANEL",
+    "age_years": 58,
+    "gender": "Female",
+    "uhid": "310225949",
+    "reference_no": "AHH2009957 / AHH2011800"
+  },
+  "report": {
+    "type": "Fasting Plasma Glucose",
+    "sample_type": "Plasma",
+    "sample_collected_at": null,
+    "reported_at": null
+  },
+  "biomarkers": [
+    {
+      "name": "Fasting Plasma Glucose",
+      "value": 102.9,
+      "unit": "mg/dL",
+      "flag": "High",
+      "ref_range": [
+        70.0,
+        99.0
+      ]
+    }
+  ]
+}
