@@ -9,7 +9,7 @@ anyio==3.7.1
 astunparse==1.6.3
 asyncio==3.4.3
 attrs==25.3.0
-bcrypt==4.2.2
+bcrypt==4.3.0
 beautifulsoup4==4.13.4
 binencrypt==2.5
 bitarray==2.9.3
