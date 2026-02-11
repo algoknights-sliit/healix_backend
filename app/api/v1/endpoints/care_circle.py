@@ -9,7 +9,7 @@ from app.services.careCircleService import (
     update_care_circle_member,
     delete_care_circle_member
 )
-from typing import List
+from typing import List, Optional
 
 router = APIRouter(prefix="/care-circle", tags=["Care Circle"])
 
@@ -24,9 +24,9 @@ def add_member(member: CareCircleMemberCreate):
 
 # Read all
 @router.get("/members")
-def get_all_members(skip: int = 0, limit: int = 100):
+def get_all_members(skip: int = 0, limit: int = 100, patient_id: Optional[str] = None):
     """List all care circle members with pagination"""
-    result = list_care_circle_members(skip, limit)
+    result = list_care_circle_members(skip, limit, patient_id)
     if not result.get("success"):
         raise HTTPException(status_code=500, detail=result.get("error", "Failed to retrieve members"))
     return result

@@ -11,6 +11,7 @@ class CareCircleMember:
     The actual database schema is managed by Supabase.
     """
     id: UUID
+    patient_id: UUID
     name: str
     email: str
     created_at: datetime

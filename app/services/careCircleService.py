@@ -13,6 +13,7 @@ def create_care_circle_member(member: CareCircleMemberCreate) -> dict:
         
         # Insert member data
         response = supabase.table("care_circle_members").insert({
+            "patient_id": str(member.patient_id),
             "name": member.name,
             "email": member.email
         }).execute()
@@ -43,10 +44,15 @@ def get_care_circle_member_by_email(email: str) -> Optional[dict]:
     except Exception as e:
         return {"success": False, "error": str(e)}
 
-def list_care_circle_members(skip: int = 0, limit: int = 100) -> dict:
+def list_care_circle_members(skip: int = 0, limit: int = 100, patient_id: Optional[str] = None) -> dict:
     """List all care circle members with pagination"""
     try:
-        response = supabase.table("care_circle_members").select("*").range(skip, skip + limit - 1).order("created_at", desc=True).execute()
+        query = supabase.table("care_circle_members").select("*")
+        
+        if patient_id:
+            query = query.eq("patient_id", patient_id)
+            
+        response = query.range(skip, skip + limit - 1).order("created_at", desc=True).execute()
         return {"success": True, "data": response.data, "count": len(response.data)}
     except Exception as e:
         return {"success": False, "error": str(e)}
