@@ -7,9 +7,9 @@ aiosqlite==0.21.0
 annotated-types==0.7.0
 anyio==3.7.1
 astunparse==1.6.3
-asyncio==3.4.3
+# asyncio==3.4.3
 attrs==25.3.0
-bcrypt==4.2.2
+bcrypt==4.3.0
 beautifulsoup4==4.13.4
 binencrypt==2.5
 bitarray==2.9.3
@@ -127,7 +127,7 @@ sortedcontainers==2.4.0
 soupsieve==2.7
 SQLAlchemy==2.0.23
 starlette==0.27.0
-supabase==2.11.1
+supabase==2.11.0
 sympy==1.13.3
 tabula-py==2.10.0
 tenacity==9.1.2
@@ -135,7 +135,7 @@ tensorboard==2.18.0
 tensorboard-data-server==0.7.2
 tensorflow==2.18.0
 tensorflow-io-gcs-filesystem==0.31.0
-tensorflow_intel==2.18.0
+tensorflow==2.18.0
 termcolor==2.5.0
 tqdm==4.67.1
 trio==0.32.0

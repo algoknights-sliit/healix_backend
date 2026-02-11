@@ -193,10 +193,8 @@ def store_normalized_report_to_db(
     """
     try:
         # Extract metadata from normalized JSON
-        # Structure is { "patient":{...}, "report": { "type": "...", ... }, "biomarkers": [...] }
-        report_data = normalized_json.get("report", {})
-        report_type = report_data.get("type", "Unknown")
-        sample_date_str = report_data.get("sample_collected_at")
+        report_type = normalized_json.get("report_type", "Unknown")
+        sample_date_str = normalized_json.get("sample_collection_date")
         
         # Parse sample collection date if provided
         sample_date = None
