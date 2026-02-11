@@ -5,21 +5,27 @@ from app.core.config import BUCKET_NAME
 
 
 def upload_pdf_to_bucket(local_pdf_path: str, user_nic: str):
-    bucket = get_bucket(BUCKET_NAME)
+    if not BUCKET_NAME:
+        raise ValueError("GCS_BUCKET environment variable is not set")
 
-    file_id = str(uuid.uuid4())
-    gcs_path = f"users/{user_nic}/reports/{file_id}.pdf"
+    try:
+        bucket = get_bucket(BUCKET_NAME)
 
-    blob = bucket.blob(gcs_path)
-    blob.upload_from_filename(
-        local_pdf_path,
-        content_type="application/pdf"
-    )
+        file_id = str(uuid.uuid4())
+        gcs_path = f"users/{user_nic}/reports/{file_id}.pdf"
 
-    return {
-        "file_id": file_id,
-        "gcs_uri": f"gs://{BUCKET_NAME}/{gcs_path}"
-    }
+        blob = bucket.blob(gcs_path)
+        blob.upload_from_filename(
+            local_pdf_path,
+            content_type="application/pdf"
+        )
+
+        return {
+            "file_id": file_id,
+            "gcs_uri": f"gs://{BUCKET_NAME}/{gcs_path}"
+        }
+    except Exception as e:
+        raise RuntimeError(f"GCS Upload Failed: {str(e)}")
 
 
 def store_json(user_nic: str, file_id: str, data: dict):
